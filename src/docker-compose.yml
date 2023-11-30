@@ -1,0 +1,38 @@
+# docker-compose.yml
+version: "3.3"
+services:
+  apache:
+    container_name: apache
+    build: ./docker/apache
+    links:
+      - php
+    ports:
+      - "80:80"
+    volumes:
+      - ./logs/apache:/var/log/apache2
+      - ./src/Wait_Lister:/usr/local/apache2/htdocs/Wait_Lister
+  php:
+    container_name: php
+    build: ./docker/php
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./src/Wait_Lister:/usr/local/apache2/htdocs/Wait_Lister
+    working_dir: /usr/local/apache2/htdocs/Wait_Lister
+  composer:
+    container_name: composer
+    image: composer/composer
+    volumes:
+      - ./src/Wait_Lister:/usr/local/apache2/htdocs/Wait_Lister
+    working_dir: /usr/local/apache2/htdocs/Wait_Lister
+    command: install
+mysql:
+    image: mysql:8.0.27
+    container_name: mysql
+    build: ./docker/mysql
+    container_name: mysql
+    entrypoint: ./mysql-entrypoint.sh
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database/mysql:/var/lib/mysql
