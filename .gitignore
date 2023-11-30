@@ -1,42 +1,36 @@
-/vendor/
+**/vendor/
 /node_modules/
 /npm-debug.log
 /yarn-error.log
 /storage/
 
 # Laravel 4 specific
-/bootstrap/compiled.php
-/app/storage/
+**/bootstrap/compiled.php
+**/app/storage/
 
 # Laravel 5 & Lumen specific
-/public/storage
-/public/hot
+**/public/storage
+**/public/hot
 
 # Laravel 5 & Lumen specific with changed public path
-/public_html/storage
-/public_html/hot
+**/public_html/storage
+**/public_html/hot
 
 storage/*.key
-/.env
-/.env.*
-/Homestead.yaml
-/Homestead.json
-/.vagrant
-/.phpunit.result.cache
+**/.env
+**/.env.*
+**/Homestead.yaml
+**/Homestead.json
+**/.vagrant
+**/.phpunit.result.cache
 
 # IDE/Editor-specific files
-/.idea/
-.vscode/
+**/.idea/
+**/.vscode/
 
 # docker related
-/docker-compose.yml
-/mysql-entrypoint.sh
-/docker-compose.yml
-/docker/mysql/Dockerfile
-/docker/php/Dockerfile
-/docker/apache/Dockerfile
-/docker/apache/Wait_Lister.apache.conf
-*/Wait_Lister.apache.conf
-*/Dockerfile
-/src/docker-compose.yml
-/src/mysql-entrypoint.sh
+**/Wait_Lister.apache.conf
+**/Dockerfile
+**/docker-compose.yml
+**/mysql-entrypoint.sh
+**/Dockerfile
