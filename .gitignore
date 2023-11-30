@@ -36,5 +36,5 @@ storage/*.key
 /docker/php/Dockerfile
 /docker/apache/Dockerfile
 /docker/apache/Wait_Lister.apache.conf
-/Dockerfile
-/docker
+*/Dockerfile
+/src/docker
